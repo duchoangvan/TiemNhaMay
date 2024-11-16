@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/Đề-xuất-thông-minh.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Weathering You</title>
+</head>
+<body>
+    <video autoplay loop class="background-video">
+        <source src="{{ asset('videos/VIETNAM - My Home - Masew, MyoMouse, Nguyen Loi.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="main-frame">
+        <div class="search-box">
+            <input type="text" class="search-txt" name="" placeholder="What's the weather?">
+            <a href="#" class="search-btn">
+                <ion-icon name="search-outline"></ion-icon>
+            </a>
+        </div>
+
+        <p class="city-hide">city hide</p>
+        
+        <div class="frame">
+            <div class="info-weather">
+                <div class="weather">
+                    <img src="{{ asset('images/icons8-cloud-100.png') }}" alt="">
+                    <p class="temperature">0<span>℃</span></p>
+                    <p class="description">Stunning</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-weather">
+            <div class="humidity">
+                <i class="bx bx-water"></i>
+                <div class="text">
+                    <div class="info-humidity">
+                        <span>0%</span>
+                    </div>
+                    <p>Humidity</p>
+                </div>
+            </div>
+
+            <div class="wind">
+                <i class="bx bx-wind"></i>
+                <div class="text">
+                    <div class="info-wind">
+                        <span>0km/h</span>
+                    </div>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+        <div class="error-frame">
+            <div class="box">
+                <img src="{{ asset('images/27386525.jpg') }}" alt="">
+                <p>OOPs! i can't find this location</p>
+            </div>
+        </div>
+    </div>
+    <div class="menu-bar">
+        <li><i class="bx bxs-home-alt-2"></i></li>
+        <li><i class="bx bxs-sun"></i></li>
+        <li><i class="bx bxs-cog"></i></li>
+        <li><i class="bx bxs-share"></i></li>
+    </div>
+    
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>

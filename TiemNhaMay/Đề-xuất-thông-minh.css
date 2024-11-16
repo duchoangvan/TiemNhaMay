@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: Spartan;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.background-video{
+  position: absolute;
+  right: 0;
+  bottom: 1;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+  .background-video{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9){
+  .background-video{
+    width: auto;
+    height: 100%;
+  }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #090707;
+}
+
+
+.main-frame{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 50px;
+  background: rgb(78, 192, 217,.1);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  border: 2px solid rgb(200, 241, 245);
+  text-align: center;
+  margin: 50px 0;
+  color: white;
+  transition: height .6s ease;
+}
+
+.main-frame .temperature{
+  position: relative;
+  font-size: 64px; 
+}
+.search-box {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  height: 40px;
+  border: 2px solid rgb(200, 241, 245);
+  transition: width 0.5s; /* Smooth width transition */
+}
+
+.search-box:hover .search-txt {
+  width: 340px;
+}
+
+.search-box:hover .search-btn {
+  border: 2px solid rgb(244, 249, 249);
+}
+input::placeholder {
+  color: #e42121; 
+  opacity: 1;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: #dd1f1f;
+  transition: 0.5s;
+  font-size: 1rem;
+  width: 0px;
+}
+
+.search-btn {
+  color: #128ec7;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.city-hide {
+  display: none;
+}
+.frame{
+  position: absolute;
+  display: flex;
+  padding: 40px 0 0 130px;
+  top: 30px;
+}
+
+.frame,.detail-weather,.error-frame {
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.frame.active,.detail-weather.active,.error-frame.active {
+  visibility: visible;
+}
+
+.main-frame .frame,
+.error-frame .box{
+  transform: translateY(10%);
+}
+
+.main-frame.active .frame, 
+.error-frame.active .box{
+  transform: translate(100%);
+  transition: transform 1s ease;
+  transition-delay: .6s;
+}
+ 
+.frame .infor-weather{
+  transform: translateY(-100%);
+}
+
+ 
+.main-frame .frame .infor-weather,
+.main-frame .detail-weather .humidity .infor-weather,
+.main-frame .detail-weather .wind .infor-wind{
+  transform: translateY(0%);
+}
+
+.main-frame .frame .infor-weather,
+.main-frame .detail-weather .humidity .infor-weather,
+.main-frame .detail-weather .wind .infor-wind{
+  transform: translateY(0%);
+  transition: transform 1s ease;
+}
+.detail-weather{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+}
+
+.detail-weather .humidity,
+.detail-weather .wind{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.detail-weather.active .humidity,
+.detail-weather.active .wind{
+  transform: translateY(0%);
+  transition: transform 1s ease;
+  transition-delay: 1.2s;
+}
+
+.detail-weather .humidity,
+.detail-weather .wind{
+  transform: translateY(-100%);
+  overflow: hidden;
+}
+
+.detail-weather .humidity{
+  padding-left: 20px;
+  justify-content: flex-start;
+}
+
+.detail-weather .wind{
+  padding-right: 20px;
+  justify-content: flex-end;
+}
+
+.detail-weather i{
+  font-size: 50px;
+  margin-right: 10px;
+}
+
+.detail-weather span{
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.detail-weather p{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error-frame{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 110px;
+}
+
+.error-frame img{
+  width: 65%;
+}
+
+.error-frame p{
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+.menu-bar{
+  position: fixed;
+  width: 300px;
+  height: 40px;
+  margin: 520px 0px 0px 480px;
+  background: rgb(238, 241, 242);
+  box-shadow: 0px 10px 2px black;
+  list-style: none;
+  display: flex;
+  border-radius: 10px;
+  justify-content: space-around;
+
+}
+.menu-bar li{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .7s;
+  border-radius: 10px;
+}
+
+.menu-bar li i{
+  font-size: 30px;
+  color: rgb(77, 206, 241);
+}
+.menu-bar li:hover {
+  transform: translateY(-17px);
+  background: rgb(202, 240, 255);
+  box-shadow: 0px 4px 8px;
+}
+
+.content {
+    margin-top: 60px; /* to avoid overlapping with the menu bar */
+    padding: 20px;
+    text-align: center;
+}
+
+
+
